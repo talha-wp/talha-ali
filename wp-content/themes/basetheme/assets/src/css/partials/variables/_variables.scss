@@ -1,0 +1,335 @@
+:root {
+	/*-------------------------------------------------
+	>> Variables for Spaces
+	-------------------------------------------------*/
+	@for $i from 1 through 115 {
+		$val: $i * 2;
+		$mobile: round($val * 0.7);
+
+		@include spacing(--dgt_space_#{$val}, $val, $mobile);
+	}
+
+	/* -------------------------------------------------
+	>> Variables for Font Sizes
+	------------------------------------------------- */
+
+	@for $i from 1 through 60 {
+		$val: $i * 2;
+		$mobile: round($val * 0.7);
+
+		@include font-size(--dgt_font_size_#{$val}, $val, $mobile);
+	}
+
+	/* -------------------------------------------------
+	>> Color variables
+	------------------------------------------------- */
+
+	/*
+	>> Base Colors
+	*/
+
+	// Theme Primary
+	--dgt_color_primary: #fcc708;
+
+	// Theme Secondary
+	--dgt_color_secondary: #000000;
+
+	// Theme Dark
+	--dgt_black: #000000;
+	--dgt_black_1: #14191f;
+	--dgt_black_2: #606364;
+
+	// Theme Light
+	--dgt_white: #ffffff;
+	--dgt_white_1: #f1f1f1;
+	--dgt_white_2: #f1e9e9;
+
+	// Theme Colors
+	--dgt_gray: #e0e0e0;
+	--dgt_gray_1: #e6e6e6;
+	--dgt_gray_2: #eee;
+
+	--dgt_blue: #0013ff;
+	--dgt_blue_1: #00a4eb;
+	--dgt_blue_2: #2ca8dd;
+
+	--dgt_navy: #091a17;
+	--dgt_navy_1: #15332e;
+	--dgt_navy_2: #2f655c;
+
+	--dgt_red: #ff0000;
+	--dgt_sea_green: #04c3b4;
+
+	--dgt_transparent: transparent;
+
+	// Text Variations
+	--dgt_regular_text: #14191f;
+	--dgt_dark_text: #14191f;
+	--dgt_white_text: #f7f7f7;
+	--dgt_light_text: #606364;
+
+	// fixed variable Colors
+
+	--dgt_success: #198754;
+	--dgt_info: #0dcaf0;
+	--dgt_warning: #ffc107;
+	--dgt_danger: #dc3545;
+	--dgt_light: #f8f9fa;
+	--dgt_dark: #212529;
+
+	--dgt_signal: #d14b3c;
+	--dgt_signal_bg: #fbede9;
+
+	--dgt_color_background: #ffffff;
+	--dgt_color_on_background: #14191f;
+
+	// Borders
+	--dgt_border: #30353c;
+	--dgt_border_1: #545454;
+	--dgt_border_2: #adadad;
+	--dgt_border_3: #e0e0e0;
+	--dgt_border_4: #14191f;
+
+	/* -------------------------------------------------
+	>> Base Colors
+	>> Base colors are used for essential elements
+	such as the logo, tables, links, blockquote,
+	default buttons styling and this should't conflict
+	with theme colors
+	------------------------------------------------- */
+
+	// text Colors
+	--dgt_body_color: var(--dgt_color_on_background);
+	--dgt_body_bg: var(--dgt_color_background);
+	--dgt_text_strong: var(--dgt_black);
+
+	--dgt_dark_text: var(--dgt_black);
+	--dgt_white_text: var(--dgt_white);
+
+	--dgt_highlight_color: var(--dgt_color_on_primary);
+	--dgt_highlight_bg: var(--dgt_color_primary);
+
+	--dgt_caption: var(--dgt_black_2);
+
+	// Headings
+
+	--dgt_heading_color: inherit;
+	--dgt_heading_link_color: var(--dgt_dark_text);
+	--dgt_heading_link_color_hover: var(--dgt_dark_text);
+
+	// link colors
+	--dgt_link_color: var(--dgt_color_primary);
+	--dgt_link_color_hover: var(--dgt_color_primary);
+	--dgt_link_border_color: var(--dgt_color_primary);
+	--dgt_link_border_color_hover: transparent;
+
+	// lists Colors
+	--dgt_list_ul_marker_color: var(--dgt_color_primary);
+	--dgt_list_ol_marker_color: var(--dgt_color_primary);
+	--dgt_list_marker_bgcolor: var(--dgt_border_4);
+
+	// Blockquote Colors
+	--dgt_blockquote_color: var(--dgt_regular_text);
+	--dgt_blockquote_border_color: var(--dgt_regular_text);
+	--dgt_quote_color: var(--dgt_regular_text);
+	--dgt_blockqoute_cite_color: var(--dgt_light_text);
+
+	// Tables Colors
+	--dgt_table_border_color: var(--dgt_border);
+	--dgt_table_head_border_color: var(--dgt_dark_text);
+	--dgt_table_foot_border_color: var(--dgt_dark_text);
+
+	// Formating
+	--dgt_strong_color: var(--dgt_regular_text);
+	--dgt_underline_border_color: var(--dgt_regular_text);
+	--dgt_abbr_border_color: var(--dgt_regular_text);
+	--dgt_delete_color: var(--dgt_danger);
+	--dgt_insert_color: var(--dgt_success);
+	--dgt_insert_border_color: var(--dgt_success);
+
+	// Code
+	--dgt_code_color: var(--dgt_white_text);
+	--dgt_code_bgcolor: var(--dgt_dark_text);
+	--dgt_pre_color: var(--dgt_white_text);
+	--dgt_pre_bgcolor: var(--dgt_dark_text);
+	--dgt_mark_bgcolor: var(--dgt_dark_text);
+	--dgt_mark_color: var(--dgt_white_text);
+
+	// Graphical elements
+	--dgt_hr_color: var(--dgt_border_2);
+
+	// Form Fields
+
+	--dgt_input_color: var(--dgt_regular_text);
+	--dgt_input_bg: var(--dgt_light_field_bg);
+	--dgt_input_border_color: var(--dgt_border);
+
+	--dgt_input_focus_color: var(--dgt_black);
+	--dgt_input_focus_bgcolor: var(--dgt_white);
+	--dgt_input_focus_border_color: var(--dgt_border_2);
+
+	--dgt_disabled_input_bgcolor: var(--dgt_field_bg);
+	--dgt_disabled_input_border_color: var(--dgt_border_1);
+
+	--dgt_placeholder_color: var(--dgt_light_text);
+	--dgt_range_track_bgcolor: var(--dgt_field_bg);
+	--dgt_range_thumb_bgcolor: var(--dgt_color_primary);
+	--dgt_color_field_border_color: var(--dgt_border);
+	--dgt_color_field_bgcolor: var(--dgt_field_bg);
+	--dgt_radio_color: var(--dgt_regular_text);
+	--dgt_radio_border_color: var(--dgt_border);
+	--dgt_radio_bgcolor: var(--dgt_field_bg);
+	--dgt_radio_after_bgcolor: var(--dgt_color_primary);
+	--dgt_checkbox_color: var(--dgt_regular_text);
+	--dgt_checkbox_border_color: var(--dgt_border);
+	--dgt_checkbox_bgcolor: var(--dgt_field_bg);
+	--dgt_checkbox_after_bgcolor: var(--dgt_color_primary);
+	--dgt_progress_bgcolor: var(--dgt_field_bg);
+	--dgt_progress_value_bgcolor: var(--dgt_color_primary);
+	--dgt_meter_bgcolor: var(--dgt_field_bg);
+	--dgt_meter_value_bgcolor: var(--dgt_color_primary);
+
+	// Button
+	--dgt_button_color: var(--dgt_white_text);
+	--dgt_button_bgcolor: var(--dgt_color_secondary);
+	--dgt_button_color_hover: var(--dgt_white_text);
+	--dgt_button_bgcolor_hover: var(--dgt_transparent);
+	--dgt_button_border_color: var(--dgt_color_secondary);
+	--dgt_button_border_color_hover: var(--dgt_color_secondary);
+
+	--dgt_reset_button_bgcolor: var(--dgt_button_bgcolor);
+	--dgt_reset_button_color: var(--dgt_white_text);
+
+	// Buttons layer
+	--dgt_theme_btn_color: var(--dgt_button_color);
+	--dgt_theme_btn_bgcolor: var(--dgt_button_bgcolor);
+	--dgt_theme_btn_color_hover: var(--dgt_color_secondary);
+	--dgt_theme_btn_bgcolor_hover: var(--dgt_button_bgcolor_hover);
+	--dgt_theme_btn_border_color: var(--dgt_button_border_color);
+	--dgt_theme_btn_border_color_hover: var(--dgt_button_border_color_hover);
+
+	// --dgt_wp_btn_color: var(--dgt_white_text);
+	// --dgt_wp_btn_bgcolor: var(--dgt_button_bg);
+
+	// --dgt_wp_outline_btn_color: var(--dgt_white_text);
+	// --dgt_wp_outline_btn_border_color: var(--dgt_dark_text);
+	// --dgt_wp_outline_btn_bgcolor: var(--dgt_dark_text);
+
+	// Date Picker
+	--dgt_datepicker_bg_color: var(--dgt_gray);
+	--dgt_datepicker_select_bgcolor: var(--dgt_white);
+	--dgt_datepicker_link_color: var(--dgt_color_secondary);
+	--dgt_datepicker_link_active_color: var(--dgt_color_primary);
+	--dgt_datepicker_calendar: var(--dgt_white_text);
+	--dgt_datepicker_th_bgcolor: var(--dgt_border_1);
+	--dgt_datepicker_even_tr_td_bgcolor: var(--dgt_border_1);
+	--dgt_datepicker_border_color: var(--dgt_border_1);
+	--dgt_datepicker_date_color: var(--dgt_dark_text);
+
+	// Errors & Confirmation
+	--dgt_valiation_error_bg_color: var(--dgt_danger_bg);
+	--dgt_valiation_message_color: var(--dgt_danger);
+	--dgt_error_field_border_color: var(--dgt_danger);
+	--dgt_valiation_error_color: var(--dgt_danger);
+	--dgt_confirmation_message_bgcolor: var(--dgt_success_bg);
+	--dgt_confirmation_message_color: var(--dgt_dark_text);
+	--dgt_confirmation_message_border_color: var(--dgt_danger);
+	--dgt_required_text_color: var(--dgt_danger);
+	--dgt_invalid_error_border_color: var(--dgt_danger);
+	--dgt_hubspot_error_label_color: var(--dgt_danger);
+	--dgt_hubspot_required_color: var(--dgt_danger);
+	--dgt_fileupload_rule_color: var(--dgt_light_text);
+	--dgt_error_menu_color: var(--dgt_dark_text);
+
+	// Accessibility
+	--dgt_acc_btn_color: var(--dgt_white_text);
+	--dgt_acc_btn_bgcolor: var(--dgt_button_bg);
+	--dgt_acc_btn_shadow: var(--dgt_danger);
+	--dgt_acc_outline: var(--dgt_black);
+
+	// Comments Box
+	--dgt_comments_reply_btn_bgcolor: var(--dgt_button_bg);
+	--dgt_comments_reply_btn_color: var(--dgt_white_text);
+	--dgt_comments_reply_btn_bgcolor_hover: var(--dgt_button_bg_hover);
+	--dgt_comments_reply_btn_color_hover: var(--dgt_white_text);
+	--dgt_comment_meta_color: var(--dgt_dark_text);
+	--dgt_comment_metadata_color: var(--dgt_light_text);
+	--dgt_comments_list_border_color: var(--dgt_border);
+	--dgt_widget_comments_meta_color: var(--dgt_light_text);
+
+	// Pagination
+	--dgt_pagination_bgcolor: var(--dgt_blue_1);
+	--dgt_pagination_color: var(--dgt_white);
+	--dgt_pagination_color_hover: var(--dgt_white);
+	--dgt_pagination_bgcolor_hover: var(--dgt_border_1);
+	--dgt_pagination_bgcolor_current: var(--dgt_border_1);
+	--dgt_pagination_color_current: var(--dgt_white);
+	--dgt_pagination_first_bgcolor: var(--dgt_border_1);
+	--dgt_pagination_first_color: var(--dgt_dark_text);
+	--dgt_pagination_border: var(--dgt_transparent);
+
+	// Widgets
+	--dgt_widget_latest_post_meta_color: var(--dgt_danger);
+	--dgt_widget_rss_feed_meta_color: var(--dgt_danger);
+	--dgt_widget_search_button_color: var(--dgt_pure_black);
+	--dgt_wp_table_block_stripe_bg_color: var(--dgt_gray);
+
+	// Breadcrumbs
+	--dgt_breadcrumb_color: var(--dgt_pure_black);
+	--dgt_breadcrumb_link_color: var(--dgt_pure_black);
+	--dgt_breadcrumb_border_color: transparent;
+	--dgt_breadcrumb_border_color_hover: var(--dgt_pure_black);
+	--dgt_breadcrumb_span_color: var(--dgt_pure_black);
+
+	// Header
+	--dgt_header_bgcolor: var(--dgt_color_primary);
+	--dgt_header_color: var(--dgt_white);
+	--dgt_header_color_hover: var(--dgt_white);
+	--dgt_header_bgcolor_sticky: var(--dgt_color_primary);
+	--dgt_header_nav_border_color: var(--dgt_white);
+
+	--dgt_header_submenu_bgcolor: var(--dgt_gray);
+	--dgt_header_submenu_color: var(--dgt_header_color);
+	--dgt_header_submenu_color_hover: var(--dgt_header_color_hover);
+
+	--dgt_header_mobile_color: var(--dgt_dark_text);
+	--dgt_header_mobile_submenu_color: var(--dgt_dark_text);
+
+	--dgt_nav_overlay_bgcolor: var(--dgt_white);
+	--dgt_mobile_nav_icon_bgcolor: var(--dgt_dark_text);
+	--dgt_abbr_border: var(--dgt_dark_text);
+
+	// Top Bar
+	--dgt_topbar_bgcolor: var(--dgt_color_secondary);
+	--dgt_topbar_color: var(--dgt_white);
+	--dgt_topbar_link_color: var(--dgt_white);
+
+	// Footer
+	--dgt_footer_bgcolor: var(--dgt_color_primary);
+	--dgt_footer_color: var(--dgt_white_text);
+
+	--dgt_footer_color_hover: var(--dgt_white_text);
+
+	--dgt_f_nav_color: var(--dgt_footer_color);
+	--dgt_f_nav_color_hover: var(--dgt_footer_color_hover);
+	--dgt_f_nav_border_color: var(--dgt_footer_color);
+	--dgt_f_nav_border_color_hover: var(--dgt_footer_color_hover);
+
+	--dgt_copyright_color: var(--dgt_white_text);
+	--dgt_legal_nav_color: var(--dgt_white_text);
+	--dgt_legal_nav_border_color: var(--dgt_white_text);
+	--dgt_legal_nav_border_color_hover: var(--dgt_white_text);
+	--dgt_legal_text_color: var(--dgt_white_text);
+
+	// Containers
+	--dgt_ctn_red: var(--dgt_red);
+	--dgt_ctn_black: var(--dgt_black);
+	--dgt_ctn_sea_green: var(--dgt_sea_green);
+
+	// style variations
+
+	--dgt_style_bg: #821212;
+	--dgt_style_text: #000000;
+	--dgt_style_link: #000000;
+	--dgt_style_button: #00a4eb;
+}

@@ -1,0 +1,8 @@
+@for $i from 1 through 115 { // 1*2=2 → 115*2=230
+  $val: $i * 2;
+
+  .is-style-gl-s#{$val},
+  .gl-s#{$val} {
+    height: var(--dgt_space_#{$val}) !important;
+  }
+}
