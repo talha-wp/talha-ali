@@ -1,0 +1,23 @@
+ .believe-block {
+     position: relative
+ }
+
+ .believe-kicker {
+     font-size: var(--dma_font_size_20);
+     left: 0;
+     line-height: 1.5;
+     margin: 0;
+     max-width: 200px;
+     position: absolute;
+     top: 16px;
+     @include font(ubt, bold);
+ }
+
+
+
+ .believe-content {
+     font-size: var(--dma_font_size_48);
+     @include font(ubt, reg);
+     line-height: 1.35;
+     text-indent: 365px
+ }

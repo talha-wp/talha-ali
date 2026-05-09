@@ -1,0 +1,24 @@
+{
+	"name": "acf/overview-section",
+	"title": "Overview Section",
+	"description": "A custom overview section block.",
+	"category": "theme-blocks",
+	"icon": "faqs",
+	"keywords": ["overview section"],
+	"supports": {
+		"align": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block-overview-section.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"preview": "overview-section-preview.webp"
+			}
+		}
+	},
+	"align": "full"
+}

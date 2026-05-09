@@ -1,0 +1,24 @@
+{
+	"name": "acf/agency-services",
+	"title": "Agency Services",
+	"description": "A custom agency services block.",
+	"category": "theme-blocks",
+	"icon": "faqs",
+	"keywords": ["agency services"],
+	"supports": {
+		"align": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block-agency-services.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"preview": "agency-services-preview.webp"
+			}
+		}
+	},
+	"align": "full"
+}

@@ -1,0 +1,24 @@
+{
+	"name": "acf/more-work",
+	"title": "More Work",
+	"description": "A custom More Work block.",
+	"category": "theme-blocks",
+	"icon": "faqs",
+	"keywords": ["More Work"],
+	"supports": {
+		"align": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block-more-work.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"preview": "more-work-preview.webp"
+			}
+		}
+	},
+	"align": "full"
+}

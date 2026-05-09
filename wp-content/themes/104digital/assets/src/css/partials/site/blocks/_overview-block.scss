@@ -1,0 +1,25 @@
+/*-------------------------------------------------
+>> Overview block – column helpers
+-------------------------------------------------*/
+
+.overview-columns {
+	&.two-columns {
+		@include fluidColumns(2, 280px, 4%);
+		row-gap: var(--dma_space_48);
+	}
+}
+
+.overview-column {
+	border-top: 1px solid rgba(5, 88, 142, 0.16);
+	box-sizing: border-box;
+	padding-top: var(--dma_space_16);
+
+	.heading-4 {
+		margin-bottom: var(--dma_space_16);
+	}
+
+	p {
+		font-size: var(--dma_font_size_16);
+		margin-bottom: 0;
+	}
+}

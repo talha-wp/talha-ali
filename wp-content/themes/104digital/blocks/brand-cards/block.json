@@ -1,0 +1,24 @@
+{
+	"name": "acf/brand-cards",
+	"title": "Brand Cards",
+	"description": "A custom brand cards block.",
+	"category": "theme-blocks",
+	"icon": "faqs",
+	"keywords": ["brand cards"],
+	"supports": {
+		"align": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block-brand-cards.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"preview": "brand-cards-preview.webp"
+			}
+		}
+	},
+	"align": "full"
+}

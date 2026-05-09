@@ -1,0 +1,24 @@
+{
+	"name": "acf/about-text",
+	"title": "About Text",
+	"description": "A custom About Text section block.",
+	"category": "theme-blocks",
+	"icon": "faqs",
+	"keywords": ["about text"],
+	"supports": {
+		"align": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block-about-text.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"preview": "about-text-preview.webp"
+			}
+		}
+	},
+	"align": "full"
+}

@@ -1,0 +1,29 @@
+.section-head {
+    max-width: 680px;
+    margin-bottom: var(--dma_space_64);
+
+    h2 {
+        // font-size: var(--dma_font_size_64);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.logo-single {
+    display: flex;
+    padding: var(--dma_space_30) var(--dma_space_20);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid rgba(5, 88, 142, 0.16);
+    background: var(--dma_white);
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}

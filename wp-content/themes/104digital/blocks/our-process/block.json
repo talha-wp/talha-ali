@@ -1,0 +1,24 @@
+{
+	"name": "acf/our-process",
+	"title": "Our Process",
+	"description": "A custom our process block.",
+	"category": "theme-blocks",
+	"icon": "faqs",
+	"keywords": ["our process"],
+	"supports": {
+		"align": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block-our-process.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"preview": "our-process-preview.webp"
+			}
+		}
+	},
+	"align": "full"
+}

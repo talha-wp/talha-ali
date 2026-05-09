@@ -1,0 +1,24 @@
+{
+	"name": "acf/inner-section",
+	"title": "Inner Section",
+	"description": "A custom inner section block.",
+	"category": "theme-blocks",
+	"icon": "faqs",
+	"keywords": ["inner section"],
+	"supports": {
+		"align": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block-inner-section.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"preview": "inner-section-preview.webp"
+			}
+		}
+	},
+	"align": "full"
+}

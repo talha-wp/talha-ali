@@ -1,0 +1,24 @@
+{
+	"name": "acf/lets-grow",
+	"title": "Lets Grow",
+	"description": "A custom lets grow block.",
+	"category": "theme-blocks",
+	"icon": "faqs",
+	"keywords": ["lets grow"],
+	"supports": {
+		"align": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block-lets-grow.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"preview": "lets-grow-preview.webp"
+			}
+		}
+	},
+	"align": "full"
+}

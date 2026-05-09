@@ -1,0 +1,116 @@
+/* -------------------------------------------------
+>> Project Styles
+---------------------------------------------------
+>> Edit these styles as required
+------------------------------------------------- */
+
+.gform-footer {
+	position: relative;
+	width: max-content;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		box-sizing: border-box;
+		padding: 9px;
+		border-radius: 50%;
+		width: 36px;
+		height: 36px;
+		top: 6px;
+		right: 6px;
+		line-height: 0.65;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include transition(all, 0.35s, ease-in-out);
+		pointer-events: none;
+	}
+
+	&::before {
+		background-color: var(--dma_black);
+	}
+
+	&::after {
+		background-image: url(../images/form-arrow.svg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 18px;
+	}
+
+	&:hover,
+	&:focus-visible {
+
+		input[type="submit"]:focus-visible,
+		button:focus-visible,
+		input[type="button"]:focus-visible {
+			color: var(--dma_button_color_hover);
+			background-color: var(--dma_button_bgcolor_hover);
+		}
+
+		&::before {
+			background-color: var(--dma_brand_yellow);
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+			filter: brightness(0);
+		}
+	}
+}
+
+input[type="image"] {
+	margin: 0 10px 0 0;
+}
+
+input[type="submit"],
+button,
+input[type="button"],
+input[type="reset"] {
+	padding: 6px 54px 6px 24px;
+	display: inline-block;
+	line-height: 1;
+	box-sizing: border-box;
+
+	@include transition(all, 0.4s, ease-in-out);
+
+	background-color: var(--dma_button_bgcolor);
+	border: none;
+	color: var(--dma_button_color);
+	outline: none;
+
+	@include font(ubt, bold);
+
+	font-size: var(--dma_font_size_16);
+	height: 48px;
+	outline: none;
+	cursor: pointer;
+	margin: 0;
+	border-radius: 50px;
+}
+
+input[type="submit"]:hover,
+button:hover,
+input[type="button"]:hover {
+	color: var(--dma_button_color_hover);
+	background-color: var(--dma_button_bgcolor_hover);
+
+}
+
+input[type="submit"]:focus-visible,
+button:focus-visible,
+input[type="button"]:focus-visible {
+	color: var(--dma_button_color_hover);
+	background-color: var(--dma_button_bgcolor_hover);
+}
+
+input[type="reset"] {
+	background-color: var(--dma_theme_btn_bgcolor);
+	color: var(--dma_theme_btn_color);
+
+	&:hover,
+	&:focus-visible {
+		color: var(--dma_theme_btn_color);
+		background-color: var(--dma_theme_btn_bgcolor_hover);
+	}
+}

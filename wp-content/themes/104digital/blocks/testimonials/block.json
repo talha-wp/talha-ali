@@ -1,0 +1,24 @@
+{
+	"name": "acf/testimonial",
+	"title": "Testimonial",
+	"description": "A custom testimonial block.",
+	"category": "theme-blocks",
+	"icon": "faqs",
+	"keywords": ["testimonial", "review", "feedback"],
+	"supports": {
+		"align": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block-testimonials.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"preview": "testimonial-preview.webp"
+			}
+		}
+	},
+	"align": "full"
+}

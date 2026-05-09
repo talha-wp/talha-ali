@@ -1,0 +1,68 @@
+.faq-block {
+	max-width: 825px;
+	margin: 0 auto;
+}
+
+.faq-single {
+	>span {
+		border: none;
+		display: block;
+		font-size: var(--dma_font_size_24);
+		@include font(ubt, med);
+
+		cursor: pointer;
+		position: relative;
+		padding: var(--dma_space_24) 0;
+		border-top: 1px solid var(--dma_border_3);
+
+		&::after {
+			position: absolute;
+			content: "";
+			width: var(--dma_space_24);
+			height: var(--dma_space_24);
+			right: 0;
+			top: var(--dma_space_30);
+
+			@include transition(all, 0.3s, ease-in-out);
+
+			display: block;
+			background-image: url(../images/faq-icon.svg);
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		&:hover,
+		&:focus-visible {
+			color: var(--wp--preset--color--black);
+			border-top: 1px solid var(--dma_border_3);
+
+			&::after {
+				// background-image: url(../images/plus-hover.svg);
+			}
+		}
+
+		&.active {
+			color: var(--wp--preset--color--black);
+
+			&::after {
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+
+.faq-content {
+	display: none;
+	border-top: 0;
+	color: var(--wp--preset--color--black);
+	font-size: var(--dma_font_size_16);
+	line-height: 32px;
+	padding-bottom: 48px;
+	// max-width: 716px;
+
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

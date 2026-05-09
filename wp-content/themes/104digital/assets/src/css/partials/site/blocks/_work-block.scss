@@ -1,0 +1,112 @@
+/*-------------------------------------------------
+>> Featured work block – card grid (match reference)
+-------------------------------------------------*/
+.work-block-items.two-columns {
+	@include fluidColumns(2, 250px, 6%);
+	gap: var(--dma_space_72) !important;
+}
+
+.work-block-item {
+	a,
+	a:visited {
+		display: block;
+		border-bottom: none;
+		padding: 0;
+	}
+
+	&:nth-child(2n + 2) {
+		margin-top: var(--dma_space_72);
+	}
+}
+
+.work-block-image {
+	aspect-ratio: 530 / 605;
+	overflow: hidden;
+	line-height: 0.65;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		transform: scale(1);
+		@include transition(all, 0.35s, ease);
+	}
+
+	a,
+	a:visited {
+		display: block;
+		border-bottom: none;
+		padding: 0;
+
+		&:hover,
+		&:focus-visible {
+			img {
+				transform: scale(1.05);
+			}
+		}
+	}
+}
+
+.work-block-content {
+	padding-top: var(--dma_space_24);
+}
+
+.work-block-kicker {
+	display: flex;
+	align-items: center;
+	gap: var(--dma_space_16);
+	margin-bottom: var(--dma_space_16);
+
+	span {
+		font-size: var(--dma_font_size_14);
+		color: var(--dma_black);
+		line-height: 1.2;
+		letter-spacing: -0.02em;
+		@include font(ubt, sbold);
+		position: relative;
+
+		&::after {
+			content: "/";
+			top: 0;
+			right: -10px;
+			position: absolute;
+			color: var(--dma_black);
+			@include font(ubt, sbold);
+			font-size: var(--dma_font_size_14);
+		}
+
+		&:last-child {
+			&::after {
+				display: none;
+			}
+		}
+	}
+}
+
+.work-block-item {
+	.heading-3 {
+		margin-bottom: 0;
+
+		a,
+		a:visited {
+			border-bottom: none;
+			color: inherit;
+			&:hover,
+			&:focus-visible {
+				color: var(--dma_heading_link_color_hover);
+			}
+		}
+
+		span {
+			font-weight: inherit;
+			color: inherit;
+		}
+	}
+}
+
+.work-block-bottom {
+	margin-top: var(--dma_space_64);
+	line-height: 0.65;
+	text-align: center;
+}

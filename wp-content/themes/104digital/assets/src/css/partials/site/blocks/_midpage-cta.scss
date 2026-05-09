@@ -1,0 +1,198 @@
+.mp-cta-form {
+    width: 50%;
+    padding: var(--dma_space_156) var(--dma_space_48) var(--dma_space_96);
+    margin-top: calc(var(--dma_space_156) * -1);
+    background-color: var(--dma_brand_yellow);
+    box-sizing: border-box;
+
+    form {
+        margin: 0;
+    }
+
+    /* Gravity Forms: File upload + submit button styling (scoped) */
+
+    .gform-footer {
+        input[type="submit"] {
+            margin: 0;
+            background-color: var(--dma_black);
+            color: var(--dma_white);
+            background-color: var(--dma_black);
+        }
+
+        input[type="submit"]:focus-visible,
+        button:focus-visible,
+        input[type="button"]:focus-visible {
+            color: var(--dma_black);
+            background-color: var(--dma_white);
+        }
+
+        &::before {
+            background-color: var(--dma_brand_yellow);
+        }
+
+        &::after {
+            filter: brightness(0);
+        }
+
+        &:hover,
+        &:focus-visible {
+
+            input[type="submit"] {
+                color: var(--dma_black);
+                background-color: var(--dma_white);
+            }
+
+            &::before {
+                background-color: var(--dma_black);
+            }
+
+            &::after {
+                filter: brightness(100%);
+            }
+        }
+    }
+
+
+    .gfield--type-fileupload {
+        display: flex;
+        align-items: center;
+        gap: var(--dma_space_24);
+        margin-bottom: var(--dma_space_36);
+
+        .gfield_label.gform-field-label {
+            flex-shrink: 0;
+            border: 2px solid var(--dma_black);
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--dma_space_12) var(--dma_space_20);
+            line-height: 1;
+
+            color: transparent;
+            font-size: 0;
+            position: relative;
+            @include font(ubt, med);
+
+            &::before {
+                content: "Upload a file";
+                color: var(--dma_black);
+                font-size: var(--dma_font_size_16);
+                line-height: 1;
+            }
+        }
+
+        .ginput_container_fileupload {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: var(--dma_space_24);
+            position: relative;
+
+            input[type="file"] {
+                position: absolute;
+                opacity: 0;
+                width: 1px;
+                height: 1px;
+            }
+
+            .gfield_description.gform_fileupload_rules {
+                margin: 0;
+                @include font(ubt, reg);
+                font-size: var(--dma_font_size_14);
+                line-height: 1.3;
+                color: var(--dma_black);
+            }
+        }
+    }
+}
+
+.mp-cta-testimonials {
+    width: 50%;
+    padding: 0 var(--dma_space_48);
+    box-sizing: border-box;
+}
+
+.cta-testi-slide {
+
+    .client-rating {
+        margin-bottom: var(--dma_space_36);
+    }
+
+    .rating-text {
+        line-height: 1.5;
+        color: var(--dma_white);
+        font-size: var(--dma_font_size_14);
+
+        span {
+            font-size: var(--dma_font_size_28);
+            color: var(--dma_white);
+            margin-bottom: -5px;
+            @include font(ubt, bold)
+        }
+    }
+
+    .rating-star {
+        background-color: var(--dma_brand_yellow);
+        padding: 6px 14px;
+
+        svg {
+            width: 11px;
+            height: 11px;
+        }
+    }
+
+    blockquote {
+        position: relative;
+        color: var(--dma_white);
+        border-left: none;
+        padding: 0;
+        margin: 0;
+        font-size: var(--dma_font_size_20);
+
+        strong {
+            color: inherit;
+        }
+    }
+
+    .client-details {
+        margin-bottom: 0;
+        width: 80%;
+    }
+
+    .client-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        overflow: clip;
+    }
+
+    .client-name {
+        width: calc(100% - calc(var(--dma_space_96) + var(--dma_space_8)));
+        margin: 0;
+
+        * {
+            color: var(--dma_white);
+        }
+
+        p {
+            font-size: var(--dma_font_size_16);
+        }
+    }
+
+    .client-name-heading {
+        font-size: var(--dma_font_size_24);
+    }
+}
+
+.cta-testi-body {
+    margin-bottom: var(--dma_space_48);
+}
+
+.quote-icon {
+    line-height: 0.65;
+}
+
+.cta-testi-bar {
+    margin-top: var(--dma_space_56);
+}

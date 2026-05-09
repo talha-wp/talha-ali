@@ -1,0 +1,423 @@
+:root {
+	/*-------------------------------------------------
+	>> Variables for Spaces
+	-------------------------------------------------*/
+	@include spacing(--dma_space_2, 2, 2);
+	@include spacing(--dma_space_4, 4, 4);
+	@include spacing(--dma_space_6, 6, 6);
+	@include spacing(--dma_space_8, 8, 8);
+	@include spacing(--dma_space_12, 12, 10);
+	@include spacing(--dma_space_16, 16, 12);
+	@include spacing(--dma_space_20, 20, 16);
+	@include spacing(--dma_space_24, 24, 20);
+	@include spacing(--dma_space_30, 30, 24);
+	@include spacing(--dma_space_36, 36, 30);
+	@include spacing(--dma_space_48, 48, 36);
+	@include spacing(--dma_space_56, 56, 38);
+	@include spacing(--dma_space_64, 64, 40);
+	@include spacing(--dma_space_72, 72, 44);
+	@include spacing(--dma_space_96, 96, 52);
+	@include spacing(--dma_space_100, 100, 52);
+	@include spacing(--dma_space_128, 128, 64);
+	@include spacing(--dma_space_156, 156, 72);
+	@include spacing(--dma_space_200, 200, 84);
+	@include spacing(--dma_space_236, 236, 98);
+
+	/* -------------------------------------------------
+	>> Variables for Font Sizes (Text Styles PDF – desktop max / mobile min, fluid 474–1280)
+	------------------------------------------------- */
+
+	@include font_size(--dma_font_size_8, 8, 6);
+	@include font_size(--dma_font_size_10, 10, 8);
+	@include font_size(--dma_font_size_12, 12, 9);
+	@include font_size(--dma_font_size_14, 14, 10);
+	@include font_size(--dma_font_size_15, 15, 12);
+	@include font_size(--dma_font_size_16, 16, 14);
+	@include font_size(--dma_font_size_18, 18, 12);
+	@include font_size(--dma_font_size_20, 20, 14);
+	@include font_size(--dma_font_size_22, 22, 18);
+	@include font_size(--dma_font_size_24, 24, 20);
+	@include font_size(--dma_font_size_26, 26, 22);
+	@include font_size(--dma_font_size_28, 28, 16);
+	@include font_size(--dma_font_size_32, 32, 24);
+	@include font_size(--dma_font_size_36, 36, 20);
+	@include font_size(--dma_font_size_40, 40, 22);
+	@include font_size(--dma_font_size_48, 48, 24);
+	@include font_size(--dma_font_size_56, 56, 32);
+	@include font_size(--dma_font_size_60, 60, 32);
+	@include font_size(--dma_font_size_64, 64, 34);
+	@include font_size(--dma_font_size_68, 68, 36);
+	@include font_size(--dma_font_size_72, 72, 32);
+	@include font_size(--dma_font_size_76, 76, 36);
+	@include font_size(--dma_font_size_80, 80, 40);
+	@include font_size(--dma_font_size_96, 96, 40);
+
+	/* -------------------------------------------------
+	>> Color variables (from Color Styles – PDF)
+	------------------------------------------------- */
+
+	/*
+	>> Basic – PDF names as --dma_* variables
+	*/
+
+	// Basic
+	--dma_brand_yellow: #fcc708;
+	--dma_dark_blue: #150e48;
+	--dma_black: #000000;
+	--dma_white: #ffffff;
+
+	// Text Color / Greys
+	--dma_dark_grey: #26262c;
+	--dma_medium_grey: #758599;
+	--dma_light_grey: #9ca3af;
+
+	// Section BG & tints
+	--dma_light_grey_blue: #f3f5f7;
+	--dma_light_yellow: rgba(252, 199, 8, 0.2);
+	--dma_light_grey_bg: #e9edf0;
+	--dma_light_blue: rgba(5, 88, 142, 0.16);
+
+	// Theme primary/secondary (mapped from PDF)
+	--dma_color_primary: var(--dma_dark_blue);
+	--dma_color_on_primary: var(--dma_white);
+	--dma_color_secondary: var(--dma_dark_blue);
+	--dma_color_secondary_2: var(--dma_brand_yellow);
+
+	// Theme Dark (Matte Black base #14191F)
+	--dma_black_1: #14191f;
+	--dma_black_2: var(--dma_dark_grey);
+
+	// Theme Light
+	--dma_white_1: var(--dma_light_grey_blue);
+	--dma_white_2: var(--dma_light_grey_bg);
+
+	// Greys (alias for existing refs)
+	--dma_gray: var(--dma_light_grey_bg);
+	--dma_gray_1: var(--dma_light_grey);
+	--dma_gray_2: var(--dma_medium_grey);
+
+	// Blue (Light Blue solid from PDF)
+	--dma_blue: #05588e;
+	--dma_blue_1: #05588e;
+	--dma_blue_2: rgba(5, 88, 142, 0.16);
+
+	--dma_navy: var(--dma_dark_blue);
+	--dma_navy_1: #15332e;
+	--dma_navy_2: #2f655c;
+
+	--dma_red: #ff0000;
+	--dma_sea_green: #04c3b4;
+
+	--dma_transparent: transparent;
+
+	// Text variations (PDF: Text Color = Dark Grey)
+	--dma_regular_text: var(--dma_dark_grey);
+	--dma_dark_text: var(--dma_dark_grey);
+	--dma_white_text: #f7f7f7;
+	--dma_light_text: var(--dma_medium_grey);
+
+	// Fixed semantic colors
+	--dma_success: #198754;
+	--dma_success_bg: #d1e7dd;
+	--dma_info: #0dcaf0;
+	--dma_warning: #ffc107;
+	--dma_danger: #dc3545;
+	--dma_danger_bg: #f8d7da;
+	--dma_light: #f8f9fa;
+	--dma_dark: #212529;
+
+	--dma_signal: #d14b3c;
+	--dma_signal_bg: #fbede9;
+
+	--dma_color_background: var(--dma_white);
+	--dma_color_on_background: var(--dma_dark_grey);
+
+	// Borders (from PDF greys)
+	--dma_border: var(--dma_dark_grey);
+	--dma_border_1: var(--dma_medium_grey);
+	--dma_border_2: var(--dma_light_grey);
+	--dma_border_3: var(--dma_light_grey_bg);
+	--dma_border_4: #14191f;
+
+	// Form field / button refs (image: primary CTA = yellow, hover = purple)
+	--dma_field_bg: var(--dma_light_grey_blue);
+	--dma_light_field_bg: var(--dma_light_grey_blue);
+	--dma_button_bg: var(--dma_brand_yellow);
+	--dma_button_bg_hover: var(--dma_dark_blue);
+	--dma_pure_black: var(--dma_black);
+
+	/*
+	>> Gradients (PDF)
+	*/
+	--dma_gradient_on_light_bg: linear-gradient(96deg,
+			#fcc708 0%,
+			#150e48 100%);
+	--dma_gradient_on_dark_bg: linear-gradient(96deg, #fcc708 0%, #150e48 100%);
+	--dma_gradient_line_stroke: linear-gradient(96deg,
+			#fcc708 0%,
+			#150e48 100%);
+
+
+	/*
+	>> Matte Black (PDF opacity variants)
+	*/
+	--dma_matte_black_90: rgba(20, 25, 31, 0.9);
+	--dma_matte_black_80: rgba(20, 25, 31, 0.8);
+	--dma_matte_black_40: rgba(20, 25, 31, 0.4);
+	--dma_matte_black_30: rgba(20, 25, 31, 0.3);
+	--dma_matte_black_20: rgba(20, 25, 31, 0.2);
+	--dma_matte_black_8: rgba(20, 25, 31, 0.08);
+
+	/*
+	>> White opacity variants (PDF)
+	*/
+	--dma_white_80: rgba(255, 255, 255, 0.8);
+	--dma_white_60: rgba(255, 255, 255, 0.6);
+	--dma_white_40: rgba(255, 255, 255, 0.4);
+	--dma_white_20: rgba(255, 255, 255, 0.2);
+	--dma_white_10: rgba(255, 255, 255, 0.1);
+
+	/* -------------------------------------------------
+	>> Base Colors
+	>> Base colors are used for essential elements
+	such as the logo, tables, links, blockquote,
+	default buttons styling and this should't conflict
+	with theme colors
+	------------------------------------------------- */
+
+	// text Colors (new base)
+	--dma_body_color: var(--dma_dark_grey);
+	--dma_body_bg: var(--dma_white);
+	--dma_text_strong: var(--dma_black);
+
+	--dma_dark_text: var(--dma_dark_grey);
+	--dma_white_text: var(--dma_white);
+
+	// Highlight: yellow box + dark text (primary), purple box + white text (secondary)
+	--dma_highlight_color: var(--dma_dark_grey);
+	--dma_highlight_bg: var(--dma_brand_yellow);
+	--dma_highlight_alt_color: var(--dma_white);
+	--dma_highlight_alt_bg: var(--dma_dark_blue);
+
+	--dma_caption: var(--dma_medium_grey);
+
+	// Headings (new base)
+	--dma_heading_color: inherit;
+	--dma_heading_link_color: var(--dma_dark_grey);
+	--dma_heading_link_color_hover: var(--dma_dark_blue);
+
+	// link colors (new base: dark blue + brand yellow hover)
+	--dma_link_color: var(--dma_dark_blue);
+	--dma_link_color_hover: var(--dma_brand_yellow);
+	--dma_link_border_color: var(--dma_dark_blue);
+	--dma_link_border_color_hover: var(--dma_brand_yellow);
+
+	// lists Colors (new base)
+	--dma_list_ul_marker_color: var(--dma_dark_blue);
+	--dma_list_ol_marker_color: var(--dma_dark_blue);
+	--dma_list_marker_bgcolor: var(--dma_black_1);
+
+	// Blockquote Colors (new base)
+	--dma_blockquote_color: var(--dma_dark_grey);
+	--dma_blockquote_border_color: var(--dma_dark_grey);
+	--dma_quote_color: var(--dma_dark_grey);
+	--dma_blockqoute_cite_color: var(--dma_medium_grey);
+
+	// Tables Colors (new base)
+	--dma_table_border_color: var(--dma_medium_grey);
+	--dma_table_head_border_color: var(--dma_dark_grey);
+	--dma_table_foot_border_color: var(--dma_dark_grey);
+
+	// Formating (new base)
+	--dma_strong_color: var(--dma_dark_grey);
+	--dma_underline_border_color: var(--dma_dark_grey);
+	--dma_abbr_border_color: var(--dma_dark_grey);
+	--dma_delete_color: var(--dma_danger);
+	--dma_insert_color: var(--dma_success);
+	--dma_insert_border_color: var(--dma_success);
+
+	// Code (new base)
+	--dma_code_color: var(--dma_white);
+	--dma_code_bgcolor: var(--dma_dark_grey);
+	--dma_pre_color: var(--dma_white);
+	--dma_pre_bgcolor: var(--dma_dark_grey);
+	--dma_mark_bgcolor: var(--dma_dark_grey);
+	--dma_mark_color: var(--dma_white);
+
+	// Graphical elements (new base)
+	--dma_hr_color: var(--dma_light_grey);
+
+	// Form Fields (new base)
+	--dma_input_color: var(--dma_dark_grey);
+	--dma_input_bg: var(--dma_light_grey_blue);
+	--dma_input_border_color: var(--dma_blue_2);
+
+	--dma_input_focus_color: var(--dma_dark_grey);
+	--dma_input_focus_bgcolor: var(--dma_white);
+	--dma_input_focus_border_color: var(--dma_brand_yellow);
+
+	--dma_disabled_input_bgcolor: var(--dma_light_grey_bg);
+	--dma_disabled_input_border_color: var(--dma_medium_grey);
+
+	--dma_placeholder_color: #262626;
+	--dma_range_track_bgcolor: var(--dma_light_grey_blue);
+	--dma_range_thumb_bgcolor: var(--dma_dark_blue);
+	--dma_color_field_border_color: var(--dma_medium_grey);
+	--dma_color_field_bgcolor: var(--dma_light_grey_blue);
+	--dma_radio_color: var(--dma_dark_grey);
+	--dma_radio_border_color: var(--dma_medium_grey);
+	--dma_radio_bgcolor: var(--dma_light_grey_blue);
+	--dma_radio_after_bgcolor: var(--dma_dark_blue);
+	--dma_checkbox_color: var(--dma_dark_grey);
+	--dma_checkbox_border_color: var(--dma_medium_grey);
+	--dma_checkbox_bgcolor: var(--dma_light_grey_blue);
+	--dma_checkbox_after_bgcolor: var(--dma_dark_blue);
+	--dma_progress_bgcolor: var(--dma_light_grey_blue);
+	--dma_progress_value_bgcolor: var(--dma_dark_blue);
+	--dma_meter_bgcolor: var(--dma_light_grey_blue);
+	--dma_meter_value_bgcolor: var(--dma_dark_blue);
+
+	// Button (image: primary = yellow + dark text, hover = purple + white)
+	--dma_button_color: var(--dma_black);
+	--dma_button_bgcolor: var(--dma_brand_yellow);
+	--dma_button_color_hover: var(--dma_white);
+	--dma_button_bgcolor_hover: var(--dma_black);
+	--dma_button_border_color: var(--dma_brand_yellow);
+	--dma_button_border_color_hover: var(--dma_black);
+
+	--dma_reset_button_bgcolor: var(--dma_brand_yellow);
+	--dma_reset_button_color: var(--dma_dark_blue);
+
+	// Buttons layer (primary CTA = yellow, secondary = purple)
+	--dma_theme_btn_color: var(--dma_button_color);
+	--dma_theme_btn_bgcolor: var(--dma_button_bgcolor);
+	--dma_theme_btn_color_hover: var(--dma_button_color_hover);
+	--dma_theme_btn_bgcolor_hover: var(--dma_button_bgcolor_hover);
+	--dma_theme_btn_border_color: var(--dma_button_border_color);
+	--dma_theme_btn_border_color_hover: var(--dma_button_border_color_hover);
+
+	// --dma_wp_btn_color: var(--dma_white_text);
+	// --dma_wp_btn_bgcolor: var(--dma_button_bg);
+
+	// --dma_wp_outline_btn_color: var(--dma_white_text);
+	// --dma_wp_outline_btn_border_color: var(--dma_dark_text);
+	// --dma_wp_outline_btn_bgcolor: var(--dma_dark_text);
+
+	// Date Picker (new base)
+	--dma_datepicker_bg_color: var(--dma_light_grey_blue);
+	--dma_datepicker_select_bgcolor: var(--dma_white);
+	--dma_datepicker_link_color: var(--dma_dark_blue);
+	--dma_datepicker_link_active_color: var(--dma_brand_yellow);
+	--dma_datepicker_calendar: var(--dma_white);
+	--dma_datepicker_th_bgcolor: var(--dma_medium_grey);
+	--dma_datepicker_even_tr_td_bgcolor: var(--dma_light_grey_bg);
+	--dma_datepicker_border_color: var(--dma_medium_grey);
+	--dma_datepicker_date_color: var(--dma_dark_grey);
+
+	// Errors & Confirmation (new base)
+	--dma_valiation_error_bg_color: var(--dma_danger_bg);
+	--dma_valiation_message_color: var(--dma_danger);
+	--dma_error_field_border_color: var(--dma_danger);
+	--dma_valiation_error_color: var(--dma_danger);
+	--dma_confirmation_message_bgcolor: var(--dma_success_bg);
+	--dma_confirmation_message_color: var(--dma_dark_grey);
+	--dma_confirmation_message_border_color: var(--dma_danger);
+	--dma_required_text_color: var(--dma_danger);
+	--dma_invalid_error_border_color: var(--dma_danger);
+	--dma_hubspot_error_label_color: var(--dma_danger);
+	--dma_hubspot_required_color: var(--dma_danger);
+	--dma_fileupload_rule_color: var(--dma_medium_grey);
+	--dma_error_menu_color: var(--dma_dark_grey);
+
+	// Accessibility (image: high-visibility yellow CTA)
+	--dma_acc_btn_color: var(--dma_dark_blue);
+	--dma_acc_btn_bgcolor: var(--dma_brand_yellow);
+	--dma_acc_btn_shadow: var(--dma_danger);
+	--dma_acc_outline: var(--dma_black);
+
+	// Comments Box (image: primary = yellow + dark text)
+	--dma_comments_reply_btn_bgcolor: var(--dma_brand_yellow);
+	--dma_comments_reply_btn_color: var(--dma_dark_blue);
+	--dma_comments_reply_btn_bgcolor_hover: var(--dma_dark_blue);
+	--dma_comments_reply_btn_color_hover: var(--dma_white);
+	--dma_comment_meta_color: var(--dma_dark_grey);
+	--dma_comment_metadata_color: var(--dma_medium_grey);
+	--dma_comments_list_border_color: var(--dma_medium_grey);
+	--dma_widget_comments_meta_color: var(--dma_medium_grey);
+
+	// Pagination (image: default purple, current/active = yellow + dark text)
+	--dma_pagination_bgcolor: var(--dma_light_grey_bg);
+	--dma_pagination_color: var(--dma_dark_blue);
+	--dma_pagination_color_hover: var(--dma_white);
+	--dma_pagination_bgcolor_hover: var(--dma_dark_blue);
+	--dma_pagination_bgcolor_current: var(--dma_brand_yellow);
+	--dma_pagination_color_current: var(--dma_dark_blue);
+	--dma_pagination_first_bgcolor: var(--dma_light_grey_bg);
+	--dma_pagination_first_color: var(--dma_dark_grey);
+	--dma_pagination_border: var(--dma_transparent);
+
+	// Widgets (new base)
+	--dma_widget_latest_post_meta_color: var(--dma_dark_blue);
+	--dma_widget_rss_feed_meta_color: var(--dma_dark_blue);
+	--dma_widget_search_button_color: var(--dma_black);
+	--dma_wp_table_block_stripe_bg_color: var(--dma_light_grey_blue);
+
+	// Breadcrumbs (new base)
+	--dma_breadcrumb_color: var(--dma_dark_grey);
+	--dma_breadcrumb_link_color: var(--dma_dark_blue);
+	--dma_breadcrumb_border_color: transparent;
+	--dma_breadcrumb_border_color_hover: var(--dma_brand_yellow);
+	--dma_breadcrumb_span_color: var(--dma_dark_grey);
+
+	// Header (new base: dark blue)
+	--dma_header_bgcolor: var(--dma_transparent);
+	--dma_header_color: var(--dma_black);
+	--dma_header_color_hover: var(--dma_black);
+	--dma_header_bgcolor_sticky: var(--dma_black);
+	--dma_header_color_sticky: var(--dma_white);
+	--dma_header_nav_border_color: var(--dma_brand_yellow);
+
+	--dma_header_submenu_bgcolor: var(--dma_light_grey_blue);
+	--dma_header_submenu_color: var(--dma_dark_grey);
+	--dma_header_submenu_color_hover: var(--dma_dark_blue);
+
+	--dma_header_mobile_color: var(--dma_dark_grey);
+	--dma_header_mobile_submenu_color: var(--dma_dark_grey);
+
+	--dma_nav_overlay_bgcolor: var(--dma_white);
+	--dma_mobile_nav_icon_bgcolor: var(--dma_dark_grey);
+	--dma_abbr_border: var(--dma_dark_grey);
+
+	// Top Bar (new base: dark blue, text white)
+	--dma_topbar_bgcolor: var(--dma_dark_blue);
+	--dma_topbar_color: var(--dma_white);
+	--dma_topbar_link_color: var(--dma_white);
+
+	// Footer (new base: dark blue)
+	--dma_footer_bgcolor: var(--dma_dark_blue);
+	--dma_footer_color: var(--dma_white);
+
+	--dma_footer_color_hover: var(--dma_brand_yellow);
+
+	--dma_f_nav_color: var(--dma_footer_color);
+	--dma_f_nav_color_hover: var(--dma_footer_color_hover);
+	--dma_f_nav_border_color: var(--dma_footer_color);
+	--dma_f_nav_border_color_hover: var(--dma_footer_color_hover);
+
+	--dma_copyright_color: var(--dma_white);
+	--dma_legal_nav_color: var(--dma_white);
+	--dma_legal_nav_border_color: var(--dma_white);
+	--dma_legal_nav_border_color_hover: var(--dma_brand_yellow);
+	--dma_legal_text_color: var(--dma_white);
+
+	// Containers (new base – keep semantic red/black/sea_green for blocks)
+	--dma_ctn_red: var(--dma_red);
+	--dma_ctn_black: var(--dma_black);
+	--dma_ctn_sea_green: var(--dma_sea_green);
+
+	// style variations (PDF palette)
+	--dma_style_bg: var(--dma_dark_blue);
+	--dma_style_text: var(--dma_dark_grey);
+	--dma_style_link: var(--dma_dark_blue);
+	--dma_style_button: var(--dma_brand_yellow);
+}

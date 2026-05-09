@@ -1,0 +1,24 @@
+{
+	"name": "acf/success-stories",
+	"title": "Success Stories",
+	"description": "A custom success stories section block.",
+	"category": "theme-blocks",
+	"icon": "faqs",
+	"keywords": ["success stories"],
+	"supports": {
+		"align": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block-success-stories.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"preview": "success-stories-preview.webp"
+			}
+		}
+	},
+	"align": "full"
+}

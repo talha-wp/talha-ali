@@ -1,0 +1,24 @@
+{
+	"name": "acf/featured-work",
+	"title": "Featured Work",
+	"description": "A custom featured work section block.",
+	"category": "theme-blocks",
+	"icon": "faqs",
+	"keywords": ["featured work"],
+	"supports": {
+		"align": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block-featured-work.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"preview": "featured-work-preview.webp"
+			}
+		}
+	},
+	"align": "full"
+}

@@ -1,0 +1,24 @@
+{
+	"name": "acf/project-slider",
+	"title": "Project Slider",
+	"description": "A custom project slider block.",
+	"category": "theme-blocks",
+	"icon": "faqs",
+	"keywords": ["project", "slider"],
+	"supports": {
+		"align": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block-project-slider.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"preview": "project-slider-preview.webp"
+			}
+		}
+	},
+	"align": "full"
+}

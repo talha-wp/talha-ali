@@ -1,0 +1,24 @@
+{
+	"name": "acf/single-banner",
+	"title": "Single Banner",
+	"description": "A custom single banner block.",
+	"category": "theme-blocks",
+	"icon": "faqs",
+	"keywords": ["project", "single"],
+	"supports": {
+		"align": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block-single-banner.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"preview": "single-banner-preview.webp"
+			}
+		}
+	},
+	"align": "full"
+}

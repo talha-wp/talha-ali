@@ -1,0 +1,24 @@
+{
+	"name": "acf/hero-section",
+	"title": "Hero Section",
+	"description": "A custom hero section block.",
+	"category": "theme-blocks",
+	"icon": "faqs",
+	"keywords": ["hero section"],
+	"supports": {
+		"align": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block-hero-section.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"preview": "hero-section-preview.webp"
+			}
+		}
+	},
+	"align": "full"
+}

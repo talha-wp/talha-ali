@@ -1,0 +1,554 @@
+/*-------------------------------------------------
+>> Process Block (draggable cards + connectors)
+-------------------------------------------------*/
+
+.process-block {
+	--process-block-lime: var(--dma_brand_yellow);
+	--process-block-ink: var(--dma_black);
+	--process-block-line: var(--dma_border_3);
+	--process-block-line-hi: var(--dma_white);
+	--process-block-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+		0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+	width: 100%;
+	min-height: 70vh;
+	position: relative;
+	// overflow-x: clip;
+	background: var(--process-block-bg);
+	padding-block: 0;
+}
+
+.process-block-head {
+	margin-bottom: var(--dma_space_48);
+}
+
+.process-block-heading {
+	margin: 0;
+	max-width: 790px;
+	color: var(--dma_black);
+	line-height: 1.05;
+	font-size: var(--dma_font_size_68);
+	@include font(ubt, bold);
+}
+
+.process-block-orb {
+	position: absolute;
+	right: 3vw;
+	bottom: -4vw;
+	width: 20vw;
+	height: 20vw;
+	border-radius: 50%;
+	background: radial-gradient(circle at 30% 25%,
+			rgba(255, 255, 255, 0.95),
+			rgba(255, 255, 255, 0) 35%),
+		radial-gradient(circle at 62% 68%,
+			rgba(187, 253, 106, 0.78),
+			rgba(44, 56, 26, 0.2) 45%,
+			transparent 68%),
+		radial-gradient(circle at 50% 50%, #121212, #040404 72%);
+	filter: blur(0.25px);
+	opacity: 0.95;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.process-block-connectors {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	z-index: 100;
+}
+
+/* Source content for dynamic block – hidden; JS reads from here and builds layout */
+.process-block-data {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.process-block-desktop {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	position: relative;
+	grid-template-columns: repeat(4, auto);
+	grid-template-rows: repeat(3, auto);
+	grid-template-areas:
+		". card2 . ."
+		"card1 card3 card5 card6"
+		". card4 . .";
+	gap: var(--dma_space_48);
+	column-gap: var(--dma_space_48);
+	justify-content: center;
+	align-content: center;
+	z-index: 50;
+	min-height: 675px;
+	// padding-bottom: var(--dma_space_72);
+}
+
+.process-block-mobile {
+	width: 100%;
+	height: 100%;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	z-index: 50;
+}
+
+.process-block .row {
+	display: flex;
+	justify-content: center;
+}
+
+.process-block .card-wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-self: center;
+	align-self: center;
+	transition: opacity 0.8s ease-in-out;
+	position: relative;
+	z-index: 20;
+	opacity: 0;
+}
+
+.process-block .card-title {
+	letter-spacing: 0.05em;
+	color: var(--process-block-ink);
+	margin: 0 0 var(--dma_space_12) 0;
+	line-height: 1;
+	text-transform: capitalize;
+	pointer-events: none;
+}
+
+.process-block .process-card {
+	border-radius: 0.75rem;
+	box-shadow: var(--process-block-shadow);
+	cursor: move;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	font-weight: 600;
+	user-select: none;
+	border: 1px solid #e4e4e7;
+	touch-action: none;
+	position: relative;
+	white-space: nowrap;
+	will-change: transform;
+	transition:
+		background-color 0.25s ease-in-out,
+		color 0.25s ease-in-out,
+		box-shadow 0.25s ease-in-out;
+}
+
+.process-block .process-card .process-block-card-lines {
+	list-style: none;
+	margin: 0 0 0 8px;
+	padding: 0;
+}
+
+.process-block .process-card .line {
+	width: 100%;
+	line-height: 1.35;
+	font-size: var(--dma_font_size_14);
+	@include font(ubt, med);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.process-block .process-card.bg-lime {
+	background: var(--process-block-lime);
+	color: var(--process-block-ink);
+}
+
+.process-block .process-card.bg-ink {
+	background: var(--dma_white);
+	color: var(--process-block-ink);
+}
+
+.process-block .process-card.text-white {
+	color: var(--process-block-ink);
+}
+
+/* Blue card in design is the hover state */
+.process-block .process-card:hover,
+.process-block .process-card:focus-visible {
+	background: var(--dma_dark_blue);
+	color: var(--dma_white);
+	box-shadow: 0 12px 20px -8px rgba(21, 14, 72, 0.55);
+
+	.line {
+		&::before {
+			background-color: var(--dma_white);
+		}
+	}
+}
+
+.process-block .process-card:hover .line,
+.process-block .process-card:focus-visible .line {
+	color: var(--dma_white);
+}
+
+.process-block-rearrange-wrap {
+	position: absolute;
+	z-index: 70;
+	bottom: var(--dma_space_16);
+	right: 0;
+}
+
+.process-block-rearrange-btn {
+	font-weight: 600;
+	background: var(--process-block-lime);
+	color: var(--dma_black);
+	border: 0;
+	border-radius: 999px;
+	font-size: var(--dma_font_size_16);
+	padding: var(--dma_space_12) var(--dma_space_24);
+	cursor: pointer;
+	box-shadow: var(--process-block-shadow);
+	@include font(ubt, reg);
+}
+
+@media (max-width: 1023px) {
+	.process-block {
+		min-height: auto;
+		padding-top: var(--dma_space_24);
+		padding-bottom: 0;
+	}
+
+	.process-block-head {
+		margin-bottom: var(--dma_space_24);
+	}
+
+	.process-block-heading {
+		max-width: 360px;
+		font-size: var(--dma_font_size_40);
+	}
+
+	.process-block-desktop {
+		display: none;
+	}
+
+	.process-block-mobile {
+		display: flex;
+		gap: var(--dma_space_24);
+	}
+
+	.process-block-orb {
+		display: none;
+	}
+}
+
+/*-------------------------------------------------
+>> Process Block (draggable cards + connectors)
+-------------------------------------------------*/
+
+.process-block {
+	--process-block-lime: var(--dma_brand_yellow);
+	--process-block-ink: var(--dma_black);
+	--process-block-line: var(--dma_border_3);
+	--process-block-line-hi: var(--dma_white);
+	--process-block-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+		0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+	width: 100%;
+	min-height: 70vh;
+	position: relative;
+	// overflow-x: clip;
+	background: var(--process-block-bg);
+	padding-block: 0;
+}
+
+.process-block-head {
+	margin-bottom: var(--dma_space_48);
+}
+
+.process-block-heading {
+	margin: 0;
+	max-width: 790px;
+	color: var(--dma_black);
+	line-height: 1.05;
+	font-size: var(--dma_font_size_68);
+	@include font(ubt, bold);
+}
+
+.process-block-orb {
+	position: absolute;
+	right: 3vw;
+	bottom: -4vw;
+	width: 20vw;
+	height: 20vw;
+	border-radius: 50%;
+	background: radial-gradient(circle at 30% 25%,
+			rgba(255, 255, 255, 0.95),
+			rgba(255, 255, 255, 0) 35%),
+		radial-gradient(circle at 62% 68%,
+			rgba(187, 253, 106, 0.78),
+			rgba(44, 56, 26, 0.2) 45%,
+			transparent 68%),
+		radial-gradient(circle at 50% 50%, #121212, #040404 72%);
+	filter: blur(0.25px);
+	opacity: 0.95;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.process-block-connectors {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	z-index: 100;
+}
+
+/* Source content for dynamic block – hidden; JS reads from here and builds layout */
+.process-block-data {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.process-block-desktop {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	position: relative;
+	grid-template-columns: repeat(4, auto);
+	grid-template-rows: repeat(3, auto);
+	grid-template-areas:
+		". card2 . ."
+		"card1 card3 card5 card6"
+		". card4 . .";
+	gap: var(--dma_space_48);
+	column-gap: var(--dma_space_48);
+	justify-content: center;
+	align-content: center;
+	z-index: 50;
+	min-height: 675px;
+	// padding-bottom: var(--dma_space_72);
+}
+
+.process-block-mobile {
+	width: 100%;
+	height: 100%;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	z-index: 50;
+}
+
+.process-block .row {
+	display: flex;
+	justify-content: center;
+}
+
+.process-block .card-wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-self: center;
+	align-self: center;
+	transition: opacity 0.8s ease-in-out;
+	position: relative;
+	z-index: 20;
+	opacity: 0;
+}
+
+.process-block .card-title {
+	letter-spacing: 0.05em;
+	color: var(--process-block-ink);
+	margin: 0 0 var(--dma_space_12) 0;
+	line-height: 1;
+	text-transform: capitalize;
+	pointer-events: none;
+}
+
+.process-block .process-card {
+	border-radius: 0.75rem;
+	box-shadow: var(--process-block-shadow);
+	cursor: move;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	font-weight: 600;
+	user-select: none;
+	border: 1px solid #e4e4e7;
+	touch-action: none;
+	position: relative;
+	white-space: nowrap;
+	will-change: transform;
+	transition:
+		background-color 0.25s ease-in-out,
+		color 0.25s ease-in-out,
+		box-shadow 0.25s ease-in-out;
+}
+
+.process-block .process-card .process-block-card-lines {
+	list-style: none;
+	margin: 0 0 0 8px;
+	padding: 0;
+}
+
+.process-block .process-card .line {
+	width: 100%;
+	line-height: 1.35;
+	font-size: var(--dma_font_size_14);
+	@include font(ubt, med);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.process-block .process-card.bg-lime {
+	background: var(--process-block-lime);
+	color: var(--process-block-ink);
+}
+
+.process-block .process-card.bg-ink {
+	background: var(--dma_white);
+	color: var(--process-block-ink);
+}
+
+.process-block .process-card.text-white {
+	color: var(--process-block-ink);
+}
+
+/* Blue card in design is the hover state */
+.process-block .process-card:hover,
+.process-block .process-card:focus-visible {
+	background: var(--dma_dark_blue);
+	color: var(--dma_white);
+	box-shadow: 0 12px 20px -8px rgba(21, 14, 72, 0.55);
+
+	.line {
+		&::before {
+			background-color: var(--dma_white);
+		}
+	}
+}
+
+.process-block .process-card:hover .line,
+.process-block .process-card:focus-visible .line {
+	color: var(--dma_white);
+}
+
+.process-block-rearrange-wrap {
+	position: absolute;
+	z-index: 70;
+	bottom: var(--dma_space_16);
+	right: 0;
+}
+
+.process-block-rearrange-btn {
+	font-weight: 600;
+	background: var(--process-block-lime);
+	color: var(--dma_black);
+	border: 0;
+	border-radius: 999px;
+	font-size: var(--dma_font_size_16);
+	padding: var(--dma_space_12) var(--dma_space_24);
+	cursor: pointer;
+	box-shadow: var(--process-block-shadow);
+	@include font(ubt, reg);
+}
+
+@media (max-width: 1023px) {
+	.process-block {
+		min-height: auto;
+		padding-top: var(--dma_space_24);
+		padding-bottom: 0;
+	}
+
+	.process-block-head {
+		margin-bottom: var(--dma_space_24);
+	}
+
+	.process-block-heading {
+		max-width: 360px;
+		font-size: var(--dma_font_size_40);
+	}
+
+	.process-block-desktop {
+		display: none;
+	}
+
+	.process-block-mobile {
+		display: flex;
+		gap: var(--dma_space_24);
+	}
+
+	.process-block-orb {
+		display: none;
+	}
+}
+
+
+// Work Process Block
+
+.work-process-block {
+	box-sizing: border-box;
+	padding-left: 34%;
+
+	.section-head {
+		max-width: 100%;
+	}
+}
+
+.work-process-item {
+	&:nth-child(n + 2) {
+		margin-top: var(--dma_space_48);
+	}
+}
+
+.work-process-number {
+	width: var(--dma_space_64);
+	height: var(--dma_space_64);
+	border-radius: 50%;
+	background-color: var(--dma_transparent);
+	border: 1px solid var(--dma_black);
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: var(--dma_font_size_32);
+	line-height: 1.3;
+	text-align: center;
+	color: var(--dma_black);
+	@include font(ubt, sbold);
+}
+
+.work-process-content {
+	width: calc(100% - var(--dma_space_96));
+
+	.work-process-title {
+		letter-spacing: -0.01em;
+		margin-bottom: var(--dma_space_12);
+		@include font(ubt, sbold);
+	}
+
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

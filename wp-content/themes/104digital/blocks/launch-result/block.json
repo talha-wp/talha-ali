@@ -1,0 +1,24 @@
+{
+	"name": "acf/launch-result",
+	"title": "Launch Result",
+	"description": "A custom Lauch Result block.",
+	"category": "theme-blocks",
+	"icon": "faqs",
+	"keywords": ["Lunch the Result"],
+	"supports": {
+		"align": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block-launch-result.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"preview": "launch-result-preview.webp"
+			}
+		}
+	},
+	"align": "full"
+}

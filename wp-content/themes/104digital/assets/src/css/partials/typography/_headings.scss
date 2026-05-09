@@ -1,0 +1,77 @@
+/* -------------------------------------------------
+>> Base Styles
+---------------------------------------------------
+>> Edit these styles as required
+------------------------------------------------- */
+
+h1,
+.heading-1,
+h2,
+.heading-2,
+h3,
+.heading-3,
+h4,
+.heading-4,
+h5,
+.heading-5,
+h6,
+.heading-6 {
+	@include font(ppn, bold);
+	margin: 0 0 20px;
+	color: var(--dma_heading_color);
+	line-height: 1.1;
+	text-transform: initial;
+	letter-spacing: -0.01em;
+
+	a,
+	a:visited {
+		color: var(--dma_heading_link_color);
+		border-bottom: none;
+
+		&:hover,
+		&:focus-visible {
+			color: var(--dma_heading_link_color_hover);
+		}
+	}
+}
+
+/* PDF Text Styles: H1 48/24, H2 40/22, H3 36/20; Sub Headings SH1 32/18, SH2 28/16, SH3 24, SH4 20 */
+h1,
+.heading-1 {
+	font-size: var(--dma_font_size_48);
+	line-height: 1.15;
+}
+
+.main-title {
+	@include font(ppn, bold);
+	font-size: var(--dma_font_size_76) !important;
+	line-height: 1.1 !important;
+}
+
+h2,
+.heading-2 {
+	font-size: var(--dma_font_size_72);
+}
+
+h3,
+.heading-3 {
+	font-size: var(--dma_font_size_36);
+}
+
+h4,
+.heading-4 {
+	@include font(ubt, bold);
+	font-size: var(--dma_font_size_32);
+}
+
+h5,
+.heading-5 {
+	@include font(ubt, bold);
+	font-size: var(--dma_font_size_24);
+}
+
+h6,
+.heading-6 {
+	@include font(ubt, bold);
+	font-size: var(--dma_font_size_20);
+}

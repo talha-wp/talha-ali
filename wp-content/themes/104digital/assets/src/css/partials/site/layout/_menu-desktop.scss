@@ -1,0 +1,230 @@
+@media (min-width: 1024px) {
+
+	.header-nav ul li:hover>ul,
+	.header-nav ul li:hover>.mega-menu,
+	.menu-item-has-children ul.focused,
+	.menu-item-has-children .mega-menu.focused,
+	.header-nav ul li a:focus-visible+ul,
+	.header-nav ul li a:focus-visible+.mega-menu {
+		opacity: 1;
+		visibility: visible;
+		overflow: visible;
+	}
+
+	.header-nav ul ul {
+		animation-delay: 0.6s;
+		opacity: 0;
+		visibility: hidden;
+		overflow: hidden;
+
+		@include transition(all, 0.35s, ease-in-out);
+	}
+
+	.header-nav ul li .mega-menu {
+		opacity: 0;
+		visibility: hidden;
+		overflow: hidden;
+		@include transition(all, 0.35s, ease-in-out);
+	}
+}
+
+.header-nav {
+	text-align: center;
+	line-height: 1;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+	gap: var(--dma_space_48);
+
+	ul {
+		margin: 0;
+		padding: 0;
+		position: relative;
+
+		li {
+			margin: 0 14px;
+			padding: 0;
+			display: inline-block;
+			position: relative;
+			line-height: 1;
+
+			@include font(ubt, med);
+
+			a,
+			a:visited,
+			span.menu-link {
+				padding: 6px 0;
+				display: inline-block;
+				line-height: 1;
+				border: 0;
+				position: relative;
+				color: var(--dma_header_color);
+				font-size: var(--dma_font_size_22);
+
+				@include font(ubt, med);
+
+				&::after {
+					content: "";
+					position: absolute;
+					width: 100%;
+					height: 2px;
+					bottom: 3px;
+					left: 0;
+					background-color: var(--dma_header_nav_border_color);
+					opacity: 0.8;
+					transform: scaleX(0);
+					transform-origin: bottom right;
+					@include transition(all, 0.35s, ease-in-out);
+				}
+			}
+
+			span.menu-link {
+				cursor: pointer;
+			}
+
+			&.menu-item-has-children>a {
+				padding-right: 15px;
+				background-position: top 11px right;
+				background-repeat: no-repeat;
+				background-size: 9px;
+				background-image: url(../images/submenu-icon.svg);
+
+				&::after {
+					width: calc(100% - 15px);
+				}
+			}
+
+			&.current-menu-item>a,
+			&.current-menu-parent>a,
+			a:hover,
+			span.menu-link:hover {
+				border: 0;
+
+				&::after {
+					transform-origin: bottom left;
+					transform: scaleX(1);
+				}
+			}
+		}
+
+		ul {
+			left: -15px;
+			width: 230px;
+			min-width: 230px;
+			opacity: 0;
+			background-color: var(--dma_white);
+			visibility: hidden;
+			padding: 0;
+			border-radius: 0;
+			position: absolute;
+			top: 33px;
+			z-index: 9;
+			overflow: hidden;
+			text-align: left;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+			@include transition(all, 0.4s, ease-in-out);
+
+			li {
+				display: block;
+				margin: 0;
+				padding: 0;
+				border-bottom: 1px solid var(--dma_border_3);
+
+				&:last-child {
+					border-bottom: 0;
+				}
+
+				a,
+				a:visited,
+				span.menu-link {
+					font-size: var(--dma_font_size_14);
+					display: block;
+					padding: var(--dma_space_16) var(--dma_space_20);
+					line-height: 1;
+					box-sizing: border-box;
+					position: relative;
+					color: var(--dma_header_submenu_color);
+
+					@include transition(all, 0.35s, ease-in-out);
+					@include font(ubt, med);
+
+					&::after {
+						display: none;
+					}
+				}
+
+				span.menu-link {
+					cursor: pointer;
+				}
+
+				a:hover,
+				span.menu-link:hover {
+					color: var(--dma_header_submenu_color_hover);
+				}
+
+				&.menu-item-has-children>a,
+				&.menu-item-has-children>span.menu-link {
+					padding-right: var(--dma_space_36);
+
+					&::after {
+						display: block;
+						content: "\203A";
+						position: absolute;
+						right: var(--dma_space_20);
+						top: 50%;
+						transform: translateY(-50%);
+						font-size: var(--dma_font_size_18);
+						color: var(--dma_black);
+					}
+				}
+
+				&.current-menu-item>a,
+				&.current-menu-parent>a,
+				&:hover>a,
+				&.current-menu-item>span.menu-link,
+				&.current-menu-parent>span.menu-link,
+				&:hover>span.menu-link {
+					border: 0;
+				}
+
+				&.current-menu-item>a,
+				&.current-menu-parent>a {
+
+					&::after,
+					&::before {
+						display: none;
+					}
+				}
+
+				&:hover>a,
+				&.current-menu-item>span.menu-link,
+				&.current-menu-parent>span.menu-link,
+				&:hover>span.menu-link {
+					background-color: var(--dma_highlight_bg);
+					color: var(--dma_black);
+				}
+			}
+
+			ul {
+				top: 0;
+				left: 100%;
+				min-width: 200px;
+				width: 200px;
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+				&::before {
+					display: none;
+					content: "";
+					width: 1px;
+					height: 1px;
+					position: absolute;
+					top: 12px;
+					left: -5px;
+					margin: auto;
+				}
+			}
+		}
+	}
+}

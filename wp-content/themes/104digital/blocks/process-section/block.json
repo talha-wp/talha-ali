@@ -1,0 +1,24 @@
+{
+	"name": "acf/process-section",
+	"title": "Process Section",
+	"description": "A custom process section block.",
+	"category": "theme-blocks",
+	"icon": "faqs",
+	"keywords": ["process section"],
+	"supports": {
+		"align": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block-process-section.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"preview": "process-section-preview.webp"
+			}
+		}
+	},
+	"align": "full"
+}

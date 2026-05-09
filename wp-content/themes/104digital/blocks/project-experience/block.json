@@ -1,0 +1,24 @@
+{
+	"name": "acf/project-experience",
+	"title": "Project Experience",
+	"description": "A custom project experience block.",
+	"category": "theme-blocks",
+	"icon": "faqs",
+	"keywords": ["project", "Experience"],
+	"supports": {
+		"align": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block-project-experience.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"preview": "project-experience-preview.webp"
+			}
+		}
+	},
+	"align": "full"
+}

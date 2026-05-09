@@ -1,0 +1,24 @@
+{
+	"name": "acf/brand-section",
+	"title": "Brand Section",
+	"description": "A custom brand section block.",
+	"category": "theme-blocks",
+	"icon": "faqs",
+	"keywords": ["brand section"],
+	"supports": {
+		"align": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block-brand-section.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"preview": "brand-section-preview.webp"
+			}
+		}
+	},
+	"align": "full"
+}

@@ -1,0 +1,24 @@
+{
+	"name": "acf/insights-resources",
+	"title": "Insights & Resources",
+	"description": "A custom insights and resources section block.",
+	"category": "theme-blocks",
+	"icon": "faqs",
+	"keywords": ["insights", "resources"],
+	"supports": {
+		"align": true
+	},
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "block-insights-resources.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"preview": "insights-resources-preview.webp"
+			}
+		}
+	},
+	"align": "full"
+}
